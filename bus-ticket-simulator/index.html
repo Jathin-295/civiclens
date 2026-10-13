@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bus Ticket Simulator & Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>🚌 Bus Ticket Simulator & Tracker</h1>
+    </header>
+    <main>
+        <section class="card" id="purchase-section">
+            <h2>Buy Ticket</h2>
+            <form id="ticket-form">
+                <label>
+                    Route:
+                    <select name="route" required>
+                        <option value="A‑B">A → B</option>
+                        <option value="B‑C">B → C</option>
+                        <option value="C‑D">C → D</option>
+                    </select>
+                </label>
+                <label>
+                    Date:
+                    <input type="date" name="date" required />
+                </label>
+                <label>
+                    Seats:
+                    <input type="number" name="seats" min="1" max="6" value="1" required />
+                </label>
+                <button type="submit" class="btn-primary">Buy Ticket</button>
+            </form>
+        </section>
+        <section class="card" id="tracker-section">
+            <h2>Ticket Tracker</h2>
+            <table id="tickets-table">
+                <thead>
+                    <tr><th>Ticket ID</th><th>Route</th><th>Date</th><th>Seats</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
