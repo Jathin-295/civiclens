@@ -1,0 +1,499 @@
+[
+  {
+    "id": "iss-1791965319510",
+    "title": "Second Report of Pavement Hole",
+    "description": "Citizen report of same deep hole.",
+    "category": "broken_sidewalk",
+    "severity": "critical",
+    "status": "duplicate",
+    "priorityScore": 63,
+    "priorityLevel": "high",
+    "priorityBreakdown": [
+      {
+        "factor": "Base Severity",
+        "points": 40,
+        "max": 40,
+        "reason": "Critical infrastructure blockage or safety emergency"
+      },
+      {
+        "factor": "Safety & Mobility Impact",
+        "points": 18,
+        "max": 25,
+        "reason": "Impedes wheeled mobility aids and presents severe trip edge"
+      },
+      {
+        "factor": "Recurrence & Area Density",
+        "points": 5,
+        "max": 20,
+        "reason": "First logged incident at this location"
+      },
+      {
+        "factor": "Evidence Reliability",
+        "points": 0,
+        "max": 15,
+        "reason": "No photo (-10); Brief description (0)"
+      }
+    ],
+    "assignedTeam": "Road & Footpath Maintenance Wing (GHMC Engineering)",
+    "location": {
+      "lat": 17.445147987203075,
+      "lng": 78.37560568826001,
+      "address": "Cyber Towers Gate 1 Approach"
+    },
+    "reportedBy": "Civic Contributor",
+    "reportedAt": "2026-10-14T08:08:39.510Z",
+    "updatedAt": "2026-10-14T08:08:39.510Z",
+    "upvotes": 1,
+    "duplicateOf": "iss-1791965319509",
+    "duplicateIds": [],
+    "aiAnalysis": null,
+    "isSampleData": false,
+    "activityLog": [
+      {
+        "id": "act-iss-1791965319510-1",
+        "timestamp": "2026-10-14T08:08:39.510Z",
+        "action": "created",
+        "actor": "Civic Contributor",
+        "details": "Report created and linked as duplicate of issue #iss-1791965319509."
+      }
+    ]
+  },
+  {
+    "id": "iss-1791965319509",
+    "title": "Parent Primary Issue for Duplicate Testing",
+    "description": "Deep pavement hole near crosswalk approach.",
+    "category": "broken_sidewalk",
+    "severity": "critical",
+    "status": "pending",
+    "priorityScore": 70,
+    "priorityLevel": "high",
+    "priorityBreakdown": [
+      {
+        "factor": "Base Severity",
+        "points": 40,
+        "max": 40,
+        "reason": "Critical infrastructure blockage or safety emergency"
+      },
+      {
+        "factor": "Safety & Mobility Impact",
+        "points": 18,
+        "max": 25,
+        "reason": "Impedes wheeled mobility aids and presents severe trip edge"
+      },
+      {
+        "factor": "Recurrence & Area Density",
+        "points": 12,
+        "max": 20,
+        "reason": "Confirmed recurring issue: 1 related community report(s)"
+      },
+      {
+        "factor": "Evidence Reliability",
+        "points": 0,
+        "max": 15,
+        "reason": "No photo (-10); Brief description (0)"
+      }
+    ],
+    "assignedTeam": "Road & Footpath Maintenance Wing (GHMC Engineering)",
+    "location": {
+      "lat": 17.44745132792763,
+      "lng": 78.37666338774915,
+      "address": "Cyber Towers Gate 1"
+    },
+    "reportedBy": "Civic Contributor",
+    "reportedAt": "2026-10-14T08:08:39.509Z",
+    "updatedAt": "2026-10-14T08:08:39.509Z",
+    "upvotes": 1,
+    "duplicateOf": null,
+    "duplicateIds": [
+      "iss-1791965319510"
+    ],
+    "aiAnalysis": null,
+    "isSampleData": false,
+    "activityLog": [
+      {
+        "id": "act-iss-1791965319509-1",
+        "timestamp": "2026-10-14T08:08:39.509Z",
+        "action": "created",
+        "actor": "Civic Contributor",
+        "details": "Issue reported and registered in civic database."
+      },
+      {
+        "id": "act-iss-1791965319509-1791965319510",
+        "timestamp": "2026-10-14T08:08:39.510Z",
+        "action": "duplicate_linked",
+        "actor": "Civic Contributor",
+        "details": "Issue #iss-1791965319510 was linked as a duplicate of this report."
+      }
+    ]
+  },
+  {
+    "id": "iss-1791965319505",
+    "title": "Status Transition Lifecycle Verification",
+    "description": "Testing in_progress and resolved transitions.",
+    "category": "obstructed_path",
+    "severity": "moderate",
+    "status": "resolved",
+    "priorityScore": 43,
+    "priorityLevel": "moderate",
+    "priorityBreakdown": [
+      {
+        "factor": "Base Severity",
+        "points": 20,
+        "max": 40,
+        "reason": "Moderate physical defect"
+      },
+      {
+        "factor": "Safety & Mobility Impact",
+        "points": 18,
+        "max": 25,
+        "reason": "Impedes wheeled mobility aids and presents severe trip edge"
+      },
+      {
+        "factor": "Recurrence & Area Density",
+        "points": 5,
+        "max": 20,
+        "reason": "First logged incident at this location"
+      },
+      {
+        "factor": "Evidence Reliability",
+        "points": 0,
+        "max": 15,
+        "reason": "No photo (-10); Brief description (0)"
+      }
+    ],
+    "assignedTeam": "Civic Space Enforcement & Public Rights-of-Way Division",
+    "location": {
+      "lat": 17.439791874424145,
+      "lng": 78.37569534485742,
+      "address": "Mindspace Road Test"
+    },
+    "reportedBy": "Civic Contributor",
+    "reportedAt": "2026-10-14T08:08:39.505Z",
+    "updatedAt": "2026-10-14T08:08:39.507Z",
+    "upvotes": 1,
+    "duplicateOf": null,
+    "duplicateIds": [],
+    "aiAnalysis": null,
+    "isSampleData": false,
+    "activityLog": [
+      {
+        "id": "act-iss-1791965319505-1",
+        "timestamp": "2026-10-14T08:08:39.505Z",
+        "action": "created",
+        "actor": "Civic Contributor",
+        "details": "Issue reported and registered in civic database."
+      },
+      {
+        "id": "act-iss-1791965319505-1791965319506-status",
+        "timestamp": "2026-10-14T08:08:39.506Z",
+        "action": "status_changed",
+        "actor": "Field Officer V. Kumar",
+        "details": "Crew dispatched",
+        "previousValue": "pending",
+        "newValue": "in_progress"
+      },
+      {
+        "id": "act-iss-1791965319505-1791965319507-status",
+        "timestamp": "2026-10-14T08:08:39.507Z",
+        "action": "status_changed",
+        "actor": "Inspector R. Sharma",
+        "details": "Obstacle cleared",
+        "previousValue": "in_progress",
+        "newValue": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "iss-1791965319501",
+    "title": "Automated Test Sidewalk Crack",
+    "description": "Test description measuring sidewalk fissure for QA verification.",
+    "category": "broken_sidewalk",
+    "severity": "high",
+    "status": "pending",
+    "priorityScore": 58,
+    "priorityLevel": "moderate",
+    "priorityBreakdown": [
+      {
+        "factor": "Base Severity",
+        "points": 30,
+        "max": 40,
+        "reason": "High severity impediment causing route detour or fall hazard"
+      },
+      {
+        "factor": "Safety & Mobility Impact",
+        "points": 18,
+        "max": 25,
+        "reason": "Impedes wheeled mobility aids and presents severe trip edge"
+      },
+      {
+        "factor": "Recurrence & Area Density",
+        "points": 5,
+        "max": 20,
+        "reason": "First logged incident at this location"
+      },
+      {
+        "factor": "Evidence Reliability",
+        "points": 5,
+        "max": 15,
+        "reason": "No photo (-10); Detailed field description (+5)"
+      }
+    ],
+    "assignedTeam": "Road & Footpath Maintenance Wing (GHMC Engineering)",
+    "location": {
+      "lat": 17.442806166833822,
+      "lng": 78.3796676760019,
+      "address": "Test Junction 42, Hitec City"
+    },
+    "reportedBy": "QA Automated Agent",
+    "reportedAt": "2026-10-14T08:08:39.501Z",
+    "updatedAt": "2026-10-14T08:08:39.501Z",
+    "upvotes": 1,
+    "duplicateOf": null,
+    "duplicateIds": [],
+    "aiAnalysis": null,
+    "isSampleData": false,
+    "activityLog": [
+      {
+        "id": "act-iss-1791965319501-1",
+        "timestamp": "2026-10-14T08:08:39.501Z",
+        "action": "created",
+        "actor": "QA Automated Agent",
+        "details": "Issue reported and registered in civic database."
+      }
+    ]
+  },
+  {
+    "id": "iss-101",
+    "title": "Displaced Concrete Slab with 10cm Lip",
+    "description": "Severe vertical crack with 10cm displacement making it impassable for manual wheelchairs and hazardous for white cane navigators.",
+    "category": "broken_sidewalk",
+    "severity": "high",
+    "status": "verified",
+    "priorityScore": 78,
+    "priorityLevel": "high",
+    "assignedTeam": "Road & Footpath Maintenance Wing (GHMC Engineering)",
+    "location": {
+      "lat": 17.4468,
+      "lng": 78.3786,
+      "address": "Cyber Towers Circle, Hitec City Road, Hyderabad"
+    },
+    "reportedBy": "Priya M. (Civic Lead)",
+    "reportedAt": "2026-10-10T09:30:00Z",
+    "updatedAt": "2026-10-12T14:20:00Z",
+    "upvotes": 28,
+    "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==",
+    "isSampleData": true,
+    "activityLog": [
+      {
+        "id": "act-101-1",
+        "timestamp": "2026-10-10T09:30:00Z",
+        "action": "created",
+        "actor": "Priya M. (Civic Lead)",
+        "details": "Report filed with photo evidence."
+      },
+      {
+        "id": "act-101-2",
+        "timestamp": "2026-10-11T11:15:00Z",
+        "action": "team_assigned",
+        "actor": "Civic Dispatch Triage",
+        "details": "Assigned to Road & Footpath Maintenance Wing (GHMC Engineering).",
+        "newValue": "Road & Footpath Maintenance Wing (GHMC Engineering)"
+      },
+      {
+        "id": "act-101-3",
+        "timestamp": "2026-10-12T14:20:00Z",
+        "action": "status_changed",
+        "actor": "Area Inspector Rajesh S.",
+        "details": "Ground truth confirmed; marked as Reviewed & Verified.",
+        "previousValue": "pending",
+        "newValue": "verified"
+      }
+    ]
+  },
+  {
+    "id": "iss-102",
+    "title": "Missing Curb Ramp at Busy Transit Crossing",
+    "description": "Direct 15cm vertical step-down without a dropped kerb at the primary junction. Wheelchairs forced onto motorized traffic lane.",
+    "category": "missing_curb_ramp",
+    "severity": "critical",
+    "status": "in_progress",
+    "priorityScore": 92,
+    "priorityLevel": "critical",
+    "assignedTeam": "Pedestrian Infrastructure & Accessibility Cell",
+    "location": {
+      "lat": 17.4415,
+      "lng": 78.3735,
+      "address": "Raidurg Metro Feeder Road Crossing, Hyderabad"
+    },
+    "reportedBy": "Ravi K. (Disability Advocate)",
+    "reportedAt": "2026-10-08T11:15:00Z",
+    "updatedAt": "2026-10-13T10:00:00Z",
+    "upvotes": 53,
+    "imageUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==",
+    "isSampleData": true,
+    "activityLog": [
+      {
+        "id": "act-102-1",
+        "timestamp": "2026-10-08T11:15:00Z",
+        "action": "created",
+        "actor": "Ravi K. (Disability Advocate)",
+        "details": "Report submitted citing critical pedestrian safety danger."
+      },
+      {
+        "id": "act-102-2",
+        "timestamp": "2026-10-09T08:00:00Z",
+        "action": "team_assigned",
+        "actor": "Triage System",
+        "details": "Assigned to Pedestrian Infrastructure & Accessibility Cell.",
+        "newValue": "Pedestrian Infrastructure & Accessibility Cell"
+      },
+      {
+        "id": "act-102-3",
+        "timestamp": "2026-10-13T10:00:00Z",
+        "action": "status_changed",
+        "actor": "Municipal Engineer Sneha V.",
+        "details": "Civil work order generated; marked In Progress.",
+        "previousValue": "verified",
+        "newValue": "in_progress"
+      }
+    ]
+  },
+  {
+    "id": "iss-103",
+    "title": "Commercial Vendor Sidewalk Encroachment",
+    "description": "Temporary fruit and juice stalls occupying the full 1.8m width of the pedestrian corridor for 30 meters.",
+    "category": "obstructed_path",
+    "severity": "moderate",
+    "status": "pending",
+    "priorityScore": 58,
+    "priorityLevel": "moderate",
+    "assignedTeam": "Civic Space Enforcement & Public Rights-of-Way Division",
+    "location": {
+      "lat": 17.4445,
+      "lng": 78.381,
+      "address": "Mindspace Junction Footpath, Madhapur, Hyderabad"
+    },
+    "reportedBy": "Sneha L. (Commuter)",
+    "reportedAt": "2026-10-12T15:00:00Z",
+    "updatedAt": "2026-10-12T15:00:00Z",
+    "upvotes": 16,
+    "isSampleData": true,
+    "activityLog": [
+      {
+        "id": "act-103-1",
+        "timestamp": "2026-10-12T15:00:00Z",
+        "action": "created",
+        "actor": "Sneha L. (Commuter)",
+        "details": "Report logged for corridor walkway obstruction."
+      }
+    ]
+  },
+  {
+    "id": "iss-104",
+    "title": "Non-Functional Street Luminaires on Overpass Walkway",
+    "description": "A 200m stretch of elevated pedestrian bridge has zero functioning luminaires, creating a severe nocturnal navigation hazard.",
+    "category": "poor_lighting",
+    "severity": "high",
+    "status": "resolved",
+    "priorityScore": 72,
+    "priorityLevel": "high",
+    "assignedTeam": "Electrical & Street Lighting Wing",
+    "location": {
+      "lat": 17.4402,
+      "lng": 78.3792,
+      "address": "Inorbit Overpass Walkway, Hitec City, Hyderabad"
+    },
+    "reportedBy": "Kavita N. (Night Shift Worker)",
+    "reportedAt": "2026-10-05T20:45:00Z",
+    "updatedAt": "2026-10-11T12:00:00Z",
+    "upvotes": 41,
+    "isSampleData": true,
+    "activityLog": [
+      {
+        "id": "act-104-1",
+        "timestamp": "2026-10-05T20:45:00Z",
+        "action": "created",
+        "actor": "Kavita N.",
+        "details": "Report logged for nocturnal blackout hazard."
+      },
+      {
+        "id": "act-104-2",
+        "timestamp": "2026-10-07T09:30:00Z",
+        "action": "status_changed",
+        "actor": "Electrical Wing",
+        "details": "Work crew deployed for LED lamp fixture replacement.",
+        "previousValue": "pending",
+        "newValue": "in_progress"
+      },
+      {
+        "id": "act-104-3",
+        "timestamp": "2026-10-11T12:00:00Z",
+        "action": "status_changed",
+        "actor": "Divisional Engineer V. Rao",
+        "details": "All 8 luminaire units replaced and energized; marked as Resolved.",
+        "previousValue": "in_progress",
+        "newValue": "resolved"
+      }
+    ]
+  },
+  {
+    "id": "iss-105",
+    "title": "Missing Tactile Blister Paving at Bus Shelter Approach",
+    "description": "No detectable yellow directional or blister warning pavers leading to the bus shelter approach ramp.",
+    "category": "no_tactile_paving",
+    "severity": "moderate",
+    "status": "pending",
+    "priorityScore": 52,
+    "priorityLevel": "moderate",
+    "assignedTeam": "Universal Design & Non-Motorized Transport Wing",
+    "location": {
+      "lat": 17.4485,
+      "lng": 78.3752,
+      "address": "Botanical Garden Bus Station Approach, Hyderabad"
+    },
+    "reportedBy": "Karthik S. (Inclusion Volunteer)",
+    "reportedAt": "2026-10-11T14:10:00Z",
+    "updatedAt": "2026-10-11T14:10:00Z",
+    "upvotes": 19,
+    "isSampleData": true,
+    "activityLog": [
+      {
+        "id": "act-105-1",
+        "timestamp": "2026-10-11T14:10:00Z",
+        "action": "created",
+        "actor": "Karthik S. (Inclusion Volunteer)",
+        "details": "Initial report filed."
+      }
+    ]
+  },
+  {
+    "id": "iss-106",
+    "title": "Open Trench & Broken Barricade along Walkway",
+    "description": "Excavation for telecom fiber with missing safety netting and deep exposed trench right next to active footpath.",
+    "category": "temporary_construction",
+    "severity": "critical",
+    "status": "pending",
+    "priorityScore": 90,
+    "priorityLevel": "critical",
+    "assignedTeam": "Construction Safety & Utility Coordination Cell",
+    "location": {
+      "lat": 17.4435,
+      "lng": 78.377,
+      "address": "Cyber Gateway Access Road, Hitec City, Hyderabad"
+    },
+    "reportedBy": "Vikram A. (IT Commuter)",
+    "reportedAt": "2026-10-13T08:20:00Z",
+    "updatedAt": "2026-10-13T08:20:00Z",
+    "upvotes": 35,
+    "isSampleData": true,
+    "activityLog": [
+      {
+        "id": "act-106-1",
+        "timestamp": "2026-10-13T08:20:00Z",
+        "action": "created",
+        "actor": "Vikram A. (IT Commuter)",
+        "details": "Urgent construction hazard flagged."
+      }
+    ]
+  }
+]

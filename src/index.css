@@ -1,0 +1,114 @@
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+/* ── Deep Forest Green & Civic-Tech Tokens ────────────────── */
+@theme {
+  --color-forest-50: #eef9f2;
+  --color-forest-100: #d8f3dc;
+  --color-forest-200: #b7e4c7;
+  --color-forest-300: #95d5b2;
+  --color-forest-400: #74c69d;
+  --color-forest-500: #52b788;
+  --color-forest-600: #40916c;
+  --color-forest-700: #2d6a4f;
+  --color-forest-800: #1b4332;
+  --color-forest-900: #132a1c;
+  --color-forest-950: #0b1d13;
+
+  --color-surface: #f8faf8;
+  --color-surface-alt: #f0f4f1;
+  --color-surface-card: #ffffff;
+  --color-border: #e2e8e3;
+  --color-border-hover: #cbd5ce;
+
+  --color-ink-primary: #132a1c;
+  --color-ink-secondary: #3b5245;
+  --color-ink-muted: #65796f;
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ── Base Styles ─────────────────────────────────────────── */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-surface);
+  color: var(--color-ink-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Accessible Focus States ─────────────────────────────── */
+*:focus-visible {
+  outline: 2.5px solid var(--color-forest-700);
+  outline-offset: 2.5px;
+  border-radius: 6px;
+}
+
+/* ── Animations ─────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Leaflet Custom Styling ──────────────────────────────── */
+.leaflet-container {
+  font-family: var(--font-sans) !important;
+  border-radius: 1rem;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 1rem !important;
+  box-shadow: 0 12px 28px -6px rgba(19, 42, 28, 0.16), 0 4px 12px -2px rgba(19, 42, 28, 0.08) !important;
+  font-family: var(--font-sans) !important;
+  border: 1px solid var(--color-border);
+}
+
+.leaflet-popup-content {
+  margin: 14px 18px !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+}
+
+.barrier-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 3px 10px rgba(19, 42, 28, 0.2);
+  border: 2.5px solid;
+  font-size: 16px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+}
+
+.barrier-marker:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 14px rgba(19, 42, 28, 0.28);
+}
+
+.landmark-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #1b4332;
+  color: white;
+  box-shadow: 0 3px 8px rgba(19, 42, 28, 0.25);
+  border: 2px solid white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.landmark-marker:hover {
+  transform: scale(1.15);
+}
