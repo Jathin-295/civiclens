@@ -1,5 +1,5 @@
+import React, { useState, Suspense, lazy } from 'react';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
-import { useState } from 'react';
 import {
   Compass,
   AlertTriangle,
@@ -11,14 +11,26 @@ import {
   Home as HomeIcon,
   ShieldCheck,
   MapPin,
+  Loader2,
 } from 'lucide-react';
-import Home from './pages/Home';
-import ExploreRoutes from './pages/ExploreRoutes';
-import ReportBarrier from './pages/ReportBarrier';
-import CommunityDashboard from './pages/CommunityDashboard';
-import AboutMethodology from './pages/AboutMethodology';
-import ReportDetail from './pages/ReportDetail';
 import { useBarriers } from './context/BarrierContext';
+
+// Fast, route-level code splitting
+const Home = lazy(() => import('./pages/Home'));
+const ExploreRoutes = lazy(() => import('./pages/ExploreRoutes'));
+const ReportBarrier = lazy(() => import('./pages/ReportBarrier'));
+const CommunityDashboard = lazy(() => import('./pages/CommunityDashboard'));
+const AboutMethodology = lazy(() => import('./pages/AboutMethodology'));
+const ReportDetail = lazy(() => import('./pages/ReportDetail'));
+
+function PageLoader() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[60vh] gap-3 text-[#2d6a4f]" role="status" aria-label="Loading page">
+      <Loader2 className="w-8 h-8 animate-spin text-[#2d6a4f]" />
+      <span className="text-sm font-semibold tracking-wide text-[#40534c]">Loading view...</span>
+    </div>
+  );
+}
 
 const NAV_ITEMS = [
   { path: '/', label: 'Overview', icon: HomeIcon, ariaLabel: 'Home and Overview' },
@@ -161,15 +173,17 @@ export default function App() {
 
         {/* ── Main Viewport ─────────────────────────── */}
         <main className="flex-1 overflow-y-auto" id="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/explore" element={<ExploreRoutes />} />
-            <Route path="/report" element={<ReportBarrier />} />
-            <Route path="/community" element={<CommunityDashboard />} />
-            <Route path="/methodology" element={<AboutMethodology />} />
-            <Route path="/issues/:id" element={<ReportDetail />} />
-            <Route path="/reports/:id" element={<ReportDetail />} />
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/explore" element={<ExploreRoutes />} />
+              <Route path="/report" element={<ReportBarrier />} />
+              <Route path="/community" element={<CommunityDashboard />} />
+              <Route path="/methodology" element={<AboutMethodology />} />
+              <Route path="/issues/:id" element={<ReportDetail />} />
+              <Route path="/reports/:id" element={<ReportDetail />} />
+            </Routes>
+          </Suspense>
         </main>
 
         {/* ── Mobile Bottom Navigation Bar ──────────── */}

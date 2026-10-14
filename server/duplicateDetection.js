@@ -58,16 +58,31 @@ export function calculateDistanceMeters(lat1, lon1, lat2, lon2) {
   return Math.round(R * c);
 }
 
+// Bounded token cache for fast duplicate string matching
+const TOKEN_CACHE = new Map();
+const MAX_TOKEN_CACHE_SIZE = 500;
+
 /**
- * Normalizes text into cleaned array of significant tokens
+ * Normalizes text into cleaned array of significant tokens (cached)
  */
 export function tokenizeText(text) {
   if (!text || typeof text !== 'string') return [];
-  return text
+  if (TOKEN_CACHE.has(text)) {
+    return TOKEN_CACHE.get(text);
+  }
+
+  const tokens = text
     .toLowerCase()
     .replace(/[^a-z0-9\s]/g, ' ')
     .split(/\s+/)
     .filter((word) => word.length > 2 && !STOP_WORDS.has(word));
+
+  if (TOKEN_CACHE.size >= MAX_TOKEN_CACHE_SIZE) {
+    const firstKey = TOKEN_CACHE.keys().next().value;
+    TOKEN_CACHE.delete(firstKey);
+  }
+  TOKEN_CACHE.set(text, tokens);
+  return tokens;
 }
 
 /**

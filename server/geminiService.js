@@ -152,8 +152,21 @@ User-provided Context / Location: ${payload.address || payload.userContext || 'C
     ),
   ];
 
+// Module-level client cache for high-throughput reuse
+let cachedAiClient = null;
+let lastApiKey = null;
+
+function getAiClient(apiKey) {
+  if (cachedAiClient && lastApiKey === apiKey) {
+    return cachedAiClient;
+  }
+  cachedAiClient = new GoogleGenAI({ apiKey });
+  lastApiKey = apiKey;
+  return cachedAiClient;
+}
+
   try {
-    const ai = new GoogleGenAI({ apiKey });
+    const ai = getAiClient(apiKey);
 
     const callModelWithTimeout = async (selectedModel, timeoutMs = 15000) => {
       let timerId;

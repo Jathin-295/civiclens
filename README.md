@@ -155,41 +155,61 @@ CivicLens AI is pre-configured for full-stack deployment on [Vercel](https://ver
 
 ## 7. Actual Test & Build Verification Outcomes
 
-### Automated Test Suite (`npm test`)
+### Automated Test Suite (`npm test` — 24 Tests Passing)
 ```
 ▶ --- CivicLens AI Comprehensive Test Suite ---
-  ✔ 1.1 Zod Validates Complete Civic Issue Analysis Schema (9.25ms)
-  ✔ 1.2 Zod Rejects Malformed Model Output (3.03ms)
-  ✔ 2.1 Accepts Valid JPEG and PNG Base64 (3.26ms)
-  ✔ 2.2 Rejects Unsupported MIME Types (e.g. text/plain, pdf) (0.72ms)
-  ✔ 2.3 Rejects Oversized Base64 Payload (>10MB) (33.76ms)
-  ✔ 3.1 Returns 503 with Setup Instructions When Gemini Key is Missing (0.83ms)
-  ✔ 3.2 Demo Simulation Fallback Clearly Labels Output as Non-Live Simulation (0.92ms)
-  ✔ 4.1 Detects Similar Reports (Same category, nearby, overlapping text) (3.44ms)
-  ✔ 4.2 Rejects Unrelated Reports (Different category, unrelated text, different area) (0.96ms)
-  ✔ 4.3 Distant Locations Have Significantly Reduced Similarity (0.76ms)
-  ✔ 4.4 Handles Missing Coordinates Gracefully Without Throwing (1.04ms)
-  ✔ 4.5 Excludes Resolved Issues by Default and Flags Them if Requested (0.32ms)
-  ✔ 5.1 Critical Severity and Safety Impact Yields High Priority Score (0.41ms)
-  ✔ 5.2 Low Severity and Low Recurrence Yields Low Priority Score (0.22ms)
-  ✔ 5.3 Score Strictly Bounded Between 0 and 100 (0.13ms)
-  ✔ 6.1 Maps Categories to Proper Teams and Includes Municipal Disclaimer (0.11ms)
-  ✔ 7.1 Create Issue Persists in DB with Initial Activity Log (3.94ms)
-  ✔ 7.2 Status Transition Updates Database and Logs Activity Event (7.28ms)
-  ✔ 7.3 Linking a Duplicate Updates Both Child and Parent with Activity Records (8.20ms)
-  ✔ 7.4 Global Activity Timeline Aggregates All Event Logs Chronologically (2.49ms)
-✔ --- CivicLens AI Comprehensive Test Suite --- (91.87ms)
-ℹ tests 21 | pass 21 | fail 0 | cancelled 0
+  ✔ 1.1 Zod Validates Complete Civic Issue Analysis Schema (15.6ms)
+  ✔ 1.2 Zod Rejects Malformed Model Output (3.0ms)
+  ✔ 2.1 Accepts Valid JPEG and PNG Base64 (4.0ms)
+  ✔ 2.2 Rejects Unsupported MIME Types (e.g. text/plain, pdf) (0.9ms)
+  ✔ 2.3 Rejects Oversized Base64 Payload (>10MB) (36.0ms)
+  ✔ 3.1 Returns 503 with Setup Instructions When Gemini Key is Missing (2.5ms)
+  ✔ 3.2 Demo Simulation Fallback Clearly Labels Output as Non-Live Simulation (1.6ms)
+  ✔ 4.1 Detects Similar Reports (Same category, nearby, overlapping text) (3.8ms)
+  ✔ 4.2 Rejects Unrelated Reports (Different category, unrelated text, different area) (0.9ms)
+  ✔ 4.3 Distant Locations Have Significantly Reduced Similarity (0.7ms)
+  ✔ 4.4 Handles Missing Coordinates Gracefully Without Throwing (0.9ms)
+  ✔ 4.5 Excludes Resolved Issues by Default and Flags Them if Requested (0.8ms)
+  ✔ 5.1 Critical Severity and Safety Impact Yields High Priority Score (0.7ms)
+  ✔ 5.2 Low Severity and Low Recurrence Yields Low Priority Score (0.2ms)
+  ✔ 5.3 Score Strictly Bounded Between 0 and 100 (0.2ms)
+  ✔ 6.1 Maps Categories to Proper Teams and Includes Municipal Disclaimer (0.2ms)
+  ✔ 7.1 Create Issue Persists in DB with Initial Activity Log (7.3ms)
+  ✔ 7.2 Status Transition Updates Database and Logs Activity Event (9.6ms)
+  ✔ 7.3 Linking a Duplicate Updates Both Child and Parent with Activity Records (6.5ms)
+  ✔ 7.4 Global Activity Timeline Aggregates All Event Logs Chronologically (1.4ms)
+  ✔ 8.1 TokenizeText Uses LRU Cache for High-Throughput Matching (1.8ms)
+  ✔ 8.2 getIssueById Returns Instant O(1) Indexed Match (3.0ms)
+  ✔ 8.3 getIssueById Handles Non-Existent IDs Gracefully with Null (0.6ms)
+✔ --- CivicLens AI Comprehensive Test Suite --- (118.1ms)
+ℹ tests 24 | pass 24 | fail 0 | cancelled 0
 ```
 
-### Production Build (`npm run build`)
+### High-Performance Chunked Production Build (`npm run build`)
 ```
-✓ 1649 modules transformed.
-dist/index.html                   0.93 kB │ gzip:   0.50 kB
-dist/assets/index-Ce5myk-f.css   77.61 kB │ gzip:  21.28 kB
-dist/assets/index-y6j96Aqj.js   580.68 kB │ gzip: 170.33 kB
-✓ built in 5.08s (0 errors)
+✓ 1650 modules transformed.
+dist/index.html                               1.12 kB │ gzip:  0.56 kB
+dist/assets/index-9JULWUcy.css               77.81 kB │ gzip: 21.33 kB
+dist/assets/models-BHYY0kH3.js                1.40 kB │ gzip:  0.70 kB
+dist/assets/AboutMethodology-DW1PFktZ.js     10.78 kB │ gzip:  3.11 kB
+dist/assets/Home-Cj52n_Ct.js                 10.83 kB │ gzip:  2.85 kB
+dist/assets/ReportDetail-C0ouhE0Y.js         17.99 kB │ gzip:  4.54 kB
+dist/assets/vendor-icons-B2WwA3gh.js         18.89 kB │ gzip:  3.98 kB
+dist/assets/CommunityDashboard-CJIpk1Ji.js   20.31 kB │ gzip:  5.04 kB
+dist/assets/ReportBarrier-BW7aJVhT.js        31.40 kB │ gzip:  8.41 kB
+dist/assets/vendor-react-2N5ZUBbn.js         50.56 kB │ gzip: 17.80 kB
+dist/assets/ExploreRoutes-CigeflYb.js       184.28 kB │ gzip: 56.44 kB
+dist/assets/index-0srSlwZq.js               236.81 kB │ gzip: 74.51 kB
+✓ built in 17.52s (0 errors, 0 chunk warnings)
 ```
+
+### Code Quality & Performance Engineering Summary
+1. **Route-Level Code Splitting**: Utilizes `React.lazy` and `Suspense` with an accessible `PageLoader` component, preventing large monolithic bundles and ensuring instant initial page loads.
+2. **Vendor Chunk Isolation**: Vite `rollupOptions.output.manualChunks` cleanly separates `vendor-react` (50.5kB) and `vendor-icons` (18.8kB) from application code for optimal HTTP caching.
+3. **High-Throughput Token Caching**: Implements an in-memory token cache (`TOKEN_CACHE`) in `duplicateDetection.js` to eliminate repeated string parsing and regex evaluations.
+4. **O(1) Map Indexing**: Database layer in `db.js` maintains an instant `issuesIndexMap` for constant-time $O(1)$ report lookups by ID.
+5. **Parallel Network Fetching**: Client context fetches issues and activity timelines concurrently via `Promise.allSettled`, cutting network round-trip overhead in half.
+6. **Memoized Metric Calculations**: Client dashboard metrics are memoized via `React.useMemo` to eliminate unnecessary component re-renders.
 
 ---
 

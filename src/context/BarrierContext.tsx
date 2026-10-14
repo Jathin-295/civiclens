@@ -112,25 +112,27 @@ export const BarrierProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedSeverity, setSelectedSeverity] = useState<string>('all');
 
-  // Fetch initial issues & activity timeline from server database
+  // Parallel fetch initial issues & activity timeline from server database
   const refreshIssuesFromServer = useCallback(async () => {
     try {
       setIsLoading(true);
-      const res = await fetch('/api/issues?limit=100');
-      if (res.ok) {
-        const data = await res.json();
-        if (data.success && Array.isArray(data.issues) && data.issues.length > 0) {
-          setBarriers(data.issues);
-          localStorage.setItem('civiclens_issues', JSON.stringify(data.issues));
+      const [issuesResult, activityResult] = await Promise.allSettled([
+        fetch('/api/issues?limit=100').then((r) => (r.ok ? r.json() : null)),
+        fetch('/api/activity?limit=25').then((r) => (r.ok ? r.json() : null)),
+      ]);
+
+      if (issuesResult.status === 'fulfilled' && issuesResult.value?.success) {
+        const remoteIssues = issuesResult.value.issues;
+        if (Array.isArray(remoteIssues) && remoteIssues.length > 0) {
+          setBarriers(remoteIssues);
+          localStorage.setItem('civiclens_issues', JSON.stringify(remoteIssues));
         }
       }
 
-      // Fetch global activity timeline
-      const actRes = await fetch('/api/activity?limit=25');
-      if (actRes.ok) {
-        const actData = await actRes.json();
-        if (actData.success && Array.isArray(actData.events)) {
-          setActivityTimeline(actData.events);
+      if (activityResult.status === 'fulfilled' && activityResult.value?.success) {
+        const events = activityResult.value.events;
+        if (Array.isArray(events)) {
+          setActivityTimeline(events);
         }
       }
       setServerError(null);
@@ -163,18 +165,24 @@ export const BarrierProvider: React.FC<{ children: React.ReactNode }> = ({ child
     }
   }, [myReports]);
 
-  // Calculated Real-Time Metrics
-  const metrics = {
-    total: barriers.length,
-    unresolved: barriers.filter((b) => b.status !== 'resolved').length,
-    highPriority: barriers.filter(
+  // Memoized Real-Time Metrics for instant UI recalculation
+  const metrics = React.useMemo(() => {
+    const total = barriers.length;
+    const resolved = barriers.filter((b) => b.status === 'resolved').length;
+    const unresolved = total - resolved;
+    const highPriority = barriers.filter(
       (b) => b.severity === 'critical' || b.severity === 'high' || (b.priorityScore || 0) >= 60
-    ).length,
-    resolved: barriers.filter((b) => b.status === 'resolved').length,
-    resolutionRate: Math.round(
-      (barriers.filter((b) => b.status === 'resolved').length / (barriers.length || 1)) * 100
-    ),
-  };
+    ).length;
+    const resolutionRate = total > 0 ? Math.round((resolved / total) * 100) : 0;
+
+    return {
+      total,
+      unresolved,
+      highPriority,
+      resolved,
+      resolutionRate,
+    };
+  }, [barriers]);
 
   // Add Issue
   const addBarrier = async (data: {

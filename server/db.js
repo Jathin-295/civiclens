@@ -288,11 +288,23 @@ export function initDb() {
   }
 }
 
+let issuesIndexMap = new Map();
+
+function rebuildIndex(issues) {
+  issuesIndexMap.clear();
+  for (const issue of issues) {
+    if (issue.id) {
+      issuesIndexMap.set(issue.id, issue);
+    }
+  }
+}
+
 /**
  * Saves issues array to DB file (with in-memory caching and safe error handling)
  */
 export function saveIssues(issues) {
   inMemoryIssuesCache = issues;
+  rebuildIndex(issues);
   try {
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -307,15 +319,21 @@ export function saveIssues(issues) {
  * Gets all issues from database
  */
 export function getAllIssues() {
-  return initDb();
+  const issues = initDb();
+  if (!issuesIndexMap.size && issues.length > 0) {
+    rebuildIndex(issues);
+  }
+  return issues;
 }
 
 /**
- * Gets a single issue by ID
+ * Gets a single issue by ID with O(1) index lookup
  */
 export function getIssueById(id) {
-  const issues = getAllIssues();
-  return issues.find((i) => i.id === id) || null;
+  if (!issuesIndexMap.size) {
+    initDb();
+  }
+  return issuesIndexMap.get(id) || null;
 }
 
 /**

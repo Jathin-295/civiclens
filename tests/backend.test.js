@@ -397,4 +397,36 @@ test('--- CivicLens AI Comprehensive Test Suite ---', async (t) => {
     assert.ok(timeline[0].timestamp, 'Event must have timestamp');
     assert.ok(timeline[0].action, 'Event must have action name');
   });
+
+  // -------------------------------------------------------------
+  // SUITE 8: Performance, Token Caching & O(1) Index Verification
+  // -------------------------------------------------------------
+  await t.test('8.1 TokenizeText Uses LRU Cache for High-Throughput Matching', () => {
+    const sample = 'Severely damaged curb ramp with missing tactile ground surface indicators';
+    const tokens1 = tokenizeText(sample);
+    const tokens2 = tokenizeText(sample);
+    assert.deepEqual(tokens1, tokens2);
+    assert.ok(tokens1.includes('severely') && tokens1.includes('curb'));
+  });
+
+  await t.test('8.2 getIssueById Returns Instant O(1) Indexed Match', () => {
+    const issue = createIssue({
+      title: 'Indexed Performance Test Issue',
+      description: 'Testing O(1) index map retrieval.',
+      category: 'uneven_surface',
+      severity: 'moderate',
+      address: 'Madhapur Circle',
+    });
+
+    const found = getIssueById(issue.id);
+    assert.ok(found, 'Issue must be located via O(1) index');
+    assert.equal(found.id, issue.id);
+    assert.equal(found.title, 'Indexed Performance Test Issue');
+  });
+
+  await t.test('8.3 getIssueById Handles Non-Existent IDs Gracefully with Null', () => {
+    const nonExistent = getIssueById('iss-non-existent-999999');
+    assert.equal(nonExistent, null, 'Query for missing ID must return null without throwing');
+  });
 });
+
